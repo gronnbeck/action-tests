@@ -6,5 +6,10 @@ jobs:
   echo-comment:
     runs-on: ubuntu-latest
     steps:
-      - name: Log Comment
-        run: echo "a comment!"
+      - name: Log Comment for PR
+        if: github.event.issue.pull_request != null
+        run: echo "This is a comment on a pull request!"
+
+      - name: Log Comment for Issue
+        if: github.event.issue.pull_request == null
+        run: echo "This is a comment on an issue!"
