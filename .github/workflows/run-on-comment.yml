@@ -1,0 +1,10 @@
+name: Run on comment
+
+on: [issue_comment]
+
+jobs:
+  echo-comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log Comment
+        run: echo "a comment!"
