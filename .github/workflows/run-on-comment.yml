@@ -18,4 +18,5 @@ jobs:
         if: github.event.issue.pull_request == null
         env: 
           COMMENT: ${{ github.event.comment.body }}
-        run: echo "This is a comment on an issue!"
+          HELLO: WORLD
+        run: echo "This is a comment on an issue! $HELLO"
