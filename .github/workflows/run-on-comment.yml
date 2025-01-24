@@ -12,10 +12,10 @@ jobs:
         if: github.event.issue.pull_request != null
         env:
           COMMENT: ${{ github.event.comment.body }}
-        run: echo "This is a comment on a pull request!: $COMMENT"
+        run: echo "This is a comment on a pull request!"
 
       - name: Log Comment for Issue
         if: github.event.issue.pull_request == null
         env: 
           COMMENT: ${{ github.event.comment.body }}
-        run: echo "This is a comment on an issue!: $COMMENT"
+        run: echo "This is a comment on an issue!"
