@@ -10,8 +10,8 @@ jobs:
     steps:
       - name: Log Comment for PR
         if: github.event.issue.pull_request != null
-        run: echo "This is a comment on a pull request!"
+        run: echo "This is a comment on a pull request!: ${{ github.event.comment.body }}"
 
       - name: Log Comment for Issue
         if: github.event.issue.pull_request == null
-        run: echo "This is a comment on an issue!"
+        run: echo "This is a comment on an issue!: ${{ github.event.comment.body }}"
